@@ -4,10 +4,10 @@ import { SortingDirection } from "./sorting-direction";
 
 export class PagingParams {
     @ApiPropertyOptional()
-    @IsNumber()
+    // @IsNumber()
     pageNumber: number;
     @ApiPropertyOptional()
-    @IsNumber()
+    // @IsNumber()
     pageSize: number;
     @ApiPropertyOptional()
     sortingDirection: SortingDirection;

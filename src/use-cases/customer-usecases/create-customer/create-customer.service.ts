@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { ClientSession, Types } from 'mongoose';
 import { ICustomerService } from 'src/persistence/customer/i.customer.service';
 import { IPaymentService } from 'src/persistence/payment/i.payment.service';
@@ -9,8 +9,8 @@ import { CreateCustomerRequest } from './create-customer-request';
 @Injectable()
 export class CreateCustomerService {
     constructor(
-        private readonly customerService: ICustomerService,
-        private readonly paymentService: IPaymentService,
+        @Inject('ICustomerService') private readonly customerService: ICustomerService,
+        @Inject('IPaymentService') private readonly paymentService: IPaymentService,
         private readonly mapper: CreateCustomerMapper
     ) {
     }

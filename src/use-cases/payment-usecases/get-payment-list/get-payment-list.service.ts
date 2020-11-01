@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { IPaymentService } from 'src/persistence/payment/i.payment.service';
 import { GetPaymentListMapper } from './get-payment-list-mapper';
@@ -9,7 +9,7 @@ import { GetPaymentListResponse } from './get-payment-list-response';
 export class GetPaymentListService {
 
     constructor(
-        private readonly paymentService: IPaymentService,
+        @Inject('IPaymentService') private readonly paymentService: IPaymentService,
         private readonly mapper: GetPaymentListMapper
     ) {
     }

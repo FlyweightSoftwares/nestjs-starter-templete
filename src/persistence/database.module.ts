@@ -2,8 +2,6 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose/dist/mongoose.module';
 import { Customer, CustomerSchema } from './customer/customer.schema.';
 import { CustomerService } from './customer/customer.service';
-import { ICustomerService } from './customer/i.customer.service';
-import { IPaymentService } from './payment/i.payment.service';
 import { Payment, PaymentSchema } from './payment/payment.schema';
 import { PaymentService } from './payment/payment.service';
 
@@ -18,11 +16,11 @@ import { PaymentService } from './payment/payment.service';
     ],
     controllers: [],
     providers: [{
-        provide:ICustomerService,
+        provide:'ICustomerService',
         useClass:CustomerService
     },
     {
-        provide:IPaymentService,
+        provide:'IPaymentService',
         useClass:PaymentService
     }],
     exports:[
@@ -33,11 +31,11 @@ import { PaymentService } from './payment/payment.service';
             ]
         ),
         {
-            provide:ICustomerService,
+            provide:'ICustomerService',
             useClass:CustomerService
         },
         {
-            provide:IPaymentService,
+            provide:'IPaymentService',
             useClass:PaymentService
         }
     ]
