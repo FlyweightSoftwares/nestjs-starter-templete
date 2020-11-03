@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { BaseService } from 'src/common/base.service';
@@ -13,6 +13,6 @@ export class CustomerService extends BaseService<Customer & Document> implements
         super(_model);
     }
     isActive(): boolean {
-       return false
+        throw new HttpException('Method not implemented.',500);
     }
 }
