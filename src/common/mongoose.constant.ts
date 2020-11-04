@@ -1,6 +1,5 @@
-
 export const DEFAULT_QUERY_FILTER = {
-    isDeleted: false
+  isDeleted: false
 };
 
 export const DEFAULT_PAGINATED_ITEMS_COUNT = 10;

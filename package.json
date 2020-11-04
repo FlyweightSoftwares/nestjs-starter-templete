@@ -18,7 +18,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "generate": "plop"
   },
   "dependencies": {
     "@nestjs/common": "^7.0.0",
@@ -50,6 +51,7 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
     "jest": "26.4.2",
+    "plop": "^2.7.4",
     "prettier": "^1.19.1",
     "supertest": "^4.0.2",
     "ts-jest": "26.2.0",

@@ -1,3 +1,3 @@
 export class CustomerBase {
-    name:string;
+  name: string;
 }

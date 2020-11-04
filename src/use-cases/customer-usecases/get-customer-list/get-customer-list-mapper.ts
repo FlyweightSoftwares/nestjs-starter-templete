@@ -5,20 +5,17 @@ import { GetCustomerBase } from "../get-customer-base";
 import { GetCustomerListResponse } from "./get-customer-list-response";
 
 export class GetCustomerListMapper {
-  constructor() {
-  }
+  constructor() {}
 
   public response(request: PagedResponse<Customer>): GetCustomerListResponse {
-
     let customers: GetCustomerBase[] = [];
     request.items.forEach((item: any) => {
       customers.push({
         id: item._id,
         name: item.name,
         payments: item.payments
-      })
+      });
     });
-
 
     let response: GetCustomerListResponse = {
       orderByPropertyName: request.orderByPropertyName,
@@ -26,9 +23,9 @@ export class GetCustomerListMapper {
       pageNumber: request.pageNumber,
       pageSize: request.pageSize,
       totalCount: request.totalCount,
-      totalPages:request.totalPages,
+      totalPages: request.totalPages,
       items: customers
-    }
+    };
     return response;
   }
 }

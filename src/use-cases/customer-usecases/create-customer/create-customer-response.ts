@@ -1,3 +1,3 @@
-export class CreateCustomerResponse{
-id:string;
+export class CreateCustomerResponse {
+  id: string;
 }

@@ -1,4 +1,4 @@
 export interface PaymentBase {
-    amount:number;
-    customerId:string;
+  amount: number;
+  customerId: string;
 }
