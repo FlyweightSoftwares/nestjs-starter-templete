@@ -23,9 +23,9 @@ export class Outbox extends Document {
 }
 
 export enum OutboxStatus {
-  Success,
-  Failed,
-  Processing
+  Success='Success',
+  Failed='Failed',
+  Processing='Processing'
 }
 
 export const OutboxSchema = SchemaFactory.createForClass(Outbox);

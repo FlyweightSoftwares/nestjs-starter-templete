@@ -23,9 +23,9 @@ export class Inbox extends Document {
 }
 
 export enum InboxStatus {
-  Success,
-  Failed,
-  Processing
+  Success='Success',
+  Failed='Failed',
+  Processing='Processing'
 }
 
 export const InboxSchema = SchemaFactory.createForClass(Inbox);

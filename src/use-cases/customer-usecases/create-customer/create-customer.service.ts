@@ -25,7 +25,7 @@ export class CreateCustomerService {
         this.rabbitMqService.publish('rabbit-mq-producer', {
             message: "welcome" + 'index',
         });
-        await this.outboxService.markedAsSuccess(customer.id,null);
+      //  await this.outboxService.markedAsSuccess(customer.id,null);
     }
 
 }

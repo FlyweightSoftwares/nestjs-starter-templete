@@ -24,3 +24,7 @@ PaymentSchema.virtual('customer',{
   foreignField:'_id',
   justOne:true
 })
+
+PaymentSchema.pre('save',{
+
+})
