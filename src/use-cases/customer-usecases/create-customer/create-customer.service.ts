@@ -18,7 +18,19 @@ export class CreateCustomerService {
   async Handle(body: CreateCustomerRequest) {
     // await this.customerService.withRetrySession(async (session: ClientSession) => {
     try {
-      const customer = this.mapper.request(body);
+     // const customer = this.mapper.request(body);
+     const customer={
+       name:'test -nested',
+       payments:[
+         {
+          amount:5100
+         },
+         {
+          amount:5200
+         }
+       ]
+
+     }
       await this.customerService.insert([customer], null);
 
       if (await this.customerService.isActive()) {
