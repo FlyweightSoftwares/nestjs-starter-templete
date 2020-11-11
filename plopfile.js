@@ -27,14 +27,14 @@ module.exports = generate => {
           actions = actions.concat([{
             type: 'add',
             path: 'new/{{camelCase name}}.ts',
-            templateFile: 'templates/Hello.ts',
+            templateFile: '.templates/Hello.ts',
           }])
 
         case 'pepperoni':
           actions = actions.concat([{
             type: 'add',
             path: 'new/{{camelCase name}}.ts',
-            templateFile: 'templates/Hello.ts',
+            templateFile: '.templates/Hello.ts',
           }])
           break;
       }
@@ -79,14 +79,14 @@ module.exports = generate => {
           actions = actions.concat([{
             type: 'add',
             path: 'new/{{camelCase name}}.ts',
-            templateFile: 'templates/Hello.ts',
+            templateFile: '.templates/Hello.ts',
           }])
 
         case 'pepperoni':
           actions = actions.concat([{
             type: 'add',
             path: 'new/{{camelCase name}}.ts',
-            templateFile: 'templates/Hello.ts',
+            templateFile: '.templates/Hello.ts',
           }])
           break;
       }
