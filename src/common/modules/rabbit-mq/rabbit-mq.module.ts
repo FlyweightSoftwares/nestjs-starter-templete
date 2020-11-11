@@ -15,7 +15,7 @@ import { RabbitMqService } from './rabbit-mq.service';
         transport: Transport.RMQ,
         options: {
           urls: [
-            'amqp://user:computer@139.59.76.143:30416',
+            'amqp://user:computer@157.245.103.101:30416',
           ],
           queue: 'rabbit-mq-nest-js',
         },

@@ -22,7 +22,7 @@ export class OutboxService extends BaseService<Outbox & Document> implements IOu
             status: OutboxStatus.Processing
         }
 
-        await this.insert([outbox], session);
+       const result= await this.insert([outbox], session);
     }
 
     async markedAsSuccess(id:string,session: ClientSession):Promise<void> {
