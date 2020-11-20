@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
 import { RabbitMqModule } from 'src/common/modules/rabbit-mq/rabbit-mq.module';
-import { DatabaseModule } from 'src/persistence/database.module';
+import { DatabaseModule } from 'src/database/database.module';
 import { GetPaymentListMapper } from './get-payment-list/get-payment-list-mapper';
 import { GetPaymentListController } from './get-payment-list/get-payment-list.controller';
-import { GetPaymentListService } from './get-payment-list/get-payment-list.service';
 
 @Module({
     imports: [ 
@@ -11,6 +10,6 @@ import { GetPaymentListService } from './get-payment-list/get-payment-list.servi
         DatabaseModule,
         ],
     controllers: [GetPaymentListController],
-    providers: [GetPaymentListService,GetPaymentListMapper],
+    providers: [GetPaymentListMapper],
 })
 export class PaymentModule { }

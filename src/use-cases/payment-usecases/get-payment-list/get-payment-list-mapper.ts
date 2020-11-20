@@ -1,6 +1,6 @@
 import { PagedResponse } from "src/common/paged-response";
 import { SortingDirection } from "src/common/sorting-direction";
-import { Payment } from "src/persistence/payment/payment.schema";
+import { Payment } from "src/database/payment/payment.schema";
 import { GetPaymentBase } from "../get-payment-base";
 import { GetPaymentListResponse } from "./get-payment-list-response";
 
