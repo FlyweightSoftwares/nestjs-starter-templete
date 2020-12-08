@@ -5,8 +5,11 @@ import { DocumentBuilder } from '@nestjs/swagger/dist/document-builder';
 import { SwaggerModule } from '@nestjs/swagger/dist/swagger-module';
 import { AppModule } from './app.module';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
+import { Logger } from "nestjs-pino";
+
 
 async function bootstrap() {
+
   const app = await NestFactory.create(AppModule);
 
   app.connectMicroservice({
@@ -35,7 +38,9 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
 
- 
+
+  app.useLogger(app.get(Logger));
+
   await app.startAllMicroservicesAsync();
   await app.listen(3000);
 }

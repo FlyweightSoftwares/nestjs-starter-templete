@@ -19,11 +19,13 @@ module.exports = generate => {
       actions: function (data) {
         var actions = [];
 
-            actions = actions.concat([{
+            actions = actions.concat([
+              {
               type: 'add',
               path: 'create-{{dashCase singularName}}/create-{{dashCase singularName}}-mapper.ts',
-              templateFile: '.templates/Hello.ts',
-            }])
+              templateFile: '.templates/create-{{dashCase singularName}}/create-{{dashCase singularName}}-mapper.ts',
+            }
+          ])
         return actions;
       },
     }),

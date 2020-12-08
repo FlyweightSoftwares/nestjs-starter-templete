@@ -1,4 +1,4 @@
-import { Body, Controller, Post, } from '@nestjs/common';
+import { Body, Controller, Logger, Post, } from '@nestjs/common';
 import { Inject } from '@nestjs/common/decorators/core/inject.decorator';
 import { ApiTags } from '@nestjs/swagger/dist/decorators/api-use-tags.decorator';
 import { IOutboxService } from 'src/common/modules/rabbit-mq/outbox/i.outbox.service';
@@ -16,13 +16,17 @@ export class CreateCustomerController {
     @Inject('IPaymentService') private readonly paymentService: IPaymentService,
     private readonly mapper: CreateCustomerMapper,
     private readonly rabbitMqService: RabbitMqService,
-    @Inject('IOutboxService') private readonly outboxService: IOutboxService
+    @Inject('IOutboxService') private readonly outboxService: IOutboxService,
+    private readonly logger: Logger
 ) {
 }
 
   @Post()
   async create(@Body() body: CreateCustomerRequest): Promise<void> {
-    
+    this.logger.warn("getHello()");
+
+    // also we can pass context
+    this.logger.error("getHello()", CreateCustomerController.name);
     const customer = this.mapper.request(body);
     await this.customerService.insert([customer], null);
     await this.outboxService.addOutbox(customer,null);
